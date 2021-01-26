@@ -4,10 +4,22 @@ import java.util.HashMap;
 import java.util.InputMismatchException;
 
 public interface Parser {
+    /**
+     * Returns the first command word in the input. E.g "todo iP" will return "iP"
+     * @param input The full input ine from the user.
+     * @return The first command word.
+     */
     static String getCommand(String input) {
         return input.split(" ", 2)[0];
     }
 
+    /**
+     * Filters out the first command word in the input and converts the rest of the
+     * String into HashMap of arguments to be processed by other classes.
+     * @param input The full string inputted by the user.
+     * @return A HashMap containing the arguments that were supplied by the user.
+     * @throws InputMismatchException Occurs when the input was malformed.
+     */
     static HashMap<String, String> getArgMap(String input) throws InputMismatchException {
         HashMap<String, String> argMap = new HashMap<>();
 
