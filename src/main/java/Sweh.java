@@ -74,6 +74,8 @@ public class Sweh extends Application {
                     return taskList.findTask(argMap);
                 case "bye":
                     return "Bye. See ya again soon!";
+                case "help":
+                    return Ui.detailedHelp(argMap);
                 default:
                     return "Sorry, I didn't understand that";
             }
